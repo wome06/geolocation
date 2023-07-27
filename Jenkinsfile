@@ -2,7 +2,9 @@ pipeline {
     triggers {
   pollSCM('* * * * *')
     }
-   agent any
+   agent {
+      docker { image 'maven:amazoncorretto' }
+   }
     tools {
   maven 'M2_HOME'
 }
@@ -12,7 +14,7 @@ pipeline {
         stage("build & SonarQube analysis") {
             agent any
             steps {
-              withSonarQubeEnv('SonarQube') {
+              withSonarQubeEnv('SonarServer') {
                   sh 'mvn sonar:sonar'
               }
             }
