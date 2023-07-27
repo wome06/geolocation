@@ -10,5 +10,17 @@ pipeline{
             }
             
         }
+        stage('check pwd'){
+            steps{
+                sh 'pwd'
+            }
+            
+        }
+        stage('list directory'){
+            steps{
+                sh 'ls'
+            }
+            
+        }
     }
 }
