@@ -19,7 +19,7 @@ pipeline{
                  classifier: '',
                   file: "target/${mavenPom.artifactId}-${mavenPom.version}.${mavenPom.packaging}",
                    type:  "${mavenPom.packaging}"]],
-                    credentialsId: 'NexusID',
+                    credentialsId: 'NEXUS_CRED',
                      groupId: "${mavenPom.groupId}",
                       nexusUrl: '174.129.150.15:8081',
                        nexusVersion: 'nexus3',
