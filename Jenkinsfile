@@ -25,7 +25,8 @@ pipeline{
                        nexusVersion: 'nexus3',
                         protocol: 'http',
                          repository: 'biom',
-                }          version: "${mavenPom.version}"
+                          version: "${mavenPom.version}"
+                }
             }
             
         }
